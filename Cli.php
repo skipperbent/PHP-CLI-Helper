@@ -67,7 +67,7 @@ class Cli {
 	 */
 	public function writeLine($text, $args = NULL) {
 		$args = func_get_args();
-		echo call_user_method_array('createColor', $this, array($args)) . chr(10);
+		echo call_user_func_array(array($this, 'createColor'), array($args)) . chr(10);
 	}
 
 	/**
@@ -75,12 +75,12 @@ class Cli {
 	 */
 	public function write($text, $args = NULL) {
 		$args = func_get_args();
-		echo call_user_method_array('createColor', $this, array($args));
+		echo call_user_func_array(array($this, 'createColor'), array($args));
 	}
 
 	public function get($text, $args = NULL) {
 		$args = func_get_args();
-		return call_user_method_array('createColor', $this, array($args));
+		return call_user_func_array(array($this, 'createColor'), array($args));
 	}
 
 	public function getCols() {
